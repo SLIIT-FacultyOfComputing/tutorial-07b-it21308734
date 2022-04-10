@@ -1,13 +1,27 @@
-// Rectangle.h
+#include "Rectangle.h"
+#include <iostream>
+using namespace std;
 
-class Rectangle {
-   private:
-      int length;
-      int width;
-   public:
-      Rectangle(); // Default Constructor
-      Rectangle(int l, int w); // Overloaded Constructor
-      ~Rectangle(); // Destructor
-      int calcArea();
-      void display();
-};
+// Default Constructor Implementation
+Rectangle::Rectangle() {
+   length = 0;
+   width = 0;
+}
+
+// Overloaded Constructor Implemenation
+Rectangle::Rectangle(int l, int w) {
+  length = l;
+  width = w;
+}
+// Destructor Implementation
+Rectangle::~Rectangle() {
+  cout << "Rectangle Destructor called" << endl;
+}
+
+void Rectangle::display() {
+   cout << "Rectangle Area = " << calcArea() << endl;
+}
+
+int Rectangle::calcArea() {
+  return length * width;
+}
